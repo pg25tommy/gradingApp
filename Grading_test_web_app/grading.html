@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grading App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Student Grading Application</h2>
+        <p class="app-version"></p>
+        
+        <label>Student Name:</label>
+        <input type="text" id="studentName" required>
+        
+        <label>Term:</label>
+        <input type="text" id="term" required>
+        
+        <div id="assignments">
+            <h3>Assignments</h3>
+        </div>
+        <button onclick="addAssignment()">Add Assignment</button>
+        
+        <h3>Teacher Notes</h3>
+        <textarea id="teacherNotes" rows="4" placeholder="Enter notes here..."></textarea>
+        
+        <button onclick="saveToFile()">Save & Download</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+    
+    <!-- History Box -->
+    <div id="history-container">
+        <h3>Admin Panel</h3>
+        <button onclick="clearHistory()">Clear History</button>
+        <div id="history"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
