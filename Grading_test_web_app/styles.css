@@ -1,0 +1,132 @@
+/* Forest Green Color Palette */
+:root {
+    --background-color: #2E4A3F; /* Deep forest green */
+    --primary-color: #3F6B49; /* Medium forest green */
+    --secondary-color: #5A8C66; /* Soft muted green */
+    --accent-color: #1F3824; /* Dark green */
+    --text-color: #DCE5D7; /* Light greenish text */
+    --button-color: #4F7B5C; /* Forest green for buttons */
+    --button-hover-color: #3C6246; /* Darker green on hover */
+    --border-color: black; /* High-contrast black border */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background: var(--primary-color);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+h2, h3 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+/* Styling for input fields, selects, and textareas */
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background: var(--secondary-color);
+    color: black; /* High contrast text */
+    border: 2px solid var(--border-color); /* Black border for all fields */
+}
+
+/* High contrast placeholder text */
+textarea::placeholder {
+    color: black; /* Ensures maximum visibility */
+    font-weight: bold;
+    opacity: 1; /* Fully visible */
+}
+
+/* Textarea specific styling */
+textarea {
+    resize: none;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: var(--button-color);
+    color: white;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+}
+
+/* Assignment container */
+.assignment {
+    background: var(--accent-color);
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    color: white;
+}
+
+/* Remove button inside assignments */
+.remove-assignment {
+    background: #16321D;
+    color: white;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.remove-assignment:hover {
+    background: #0F2716;
+}
+
+/* History Box */
+#history-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 250px;
+    background: var(--secondary-color);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    color: black;
+}
+
+#history p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: black;
+}
