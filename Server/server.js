@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 80;
 
 // Debug: Log if environment variables are loaded (With Icons 🛠️ ✅ ⚠️)
-console.log("🛠️  ENV Loaded: ", process.env.ADMIN_USERNAME, process.env.USER_USERNAME);
+console.log("🛠️  ENV Loaded: ", process.env.ADMIN_USERNAME, process.env.USER_USERNAME, process.env.BETA1_USERNAME);
 if (!process.env.ADMIN_USERNAME || !process.env.USER_USERNAME) {
     console.log("⚠️  WARNING: Some environment variables are missing!");
 }
@@ -30,13 +30,16 @@ app.get("/users.json", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "Grading_test_web_app", "users.json"));
 });
 
-// Store credentials from `.env` file
+// 🔹 Store credentials from `.env` file
 const users = {
   [process.env.ADMIN_USERNAME]: process.env.ADMIN_PASSWORD,
   [process.env.USER_USERNAME]: process.env.USER_PASSWORD,
+  [process.env.BETA1_USERNAME]: process.env.BETA1_PASSWORD,
+  [process.env.BETA2_USERNAME]: process.env.BETA2_PASSWORD,
+  [process.env.BETA3_USERNAME]: process.env.BETA3_PASSWORD
 };
 
-// 🔹 Secure login route with enhanced debugging
+// 🔹 Secure login route with debugging
 app.post("/login", express.json(), (req, res) => {
     const { username, password } = req.body;
     
