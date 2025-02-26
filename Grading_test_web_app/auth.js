@@ -5,19 +5,22 @@ function login() {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
 
-  fetch("users.json")
-    .then(response => response.json())
-    .then(users => {
-      if (users[username] && users[username] === password) {
-        localStorage.setItem("authenticated", "true");
-        localStorage.setItem("currentUser", username);
-        // On success, redirect to grading page
-        window.location.href = "grading.html";
+  fetch("/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password }),
+  })
+  .then(response => response.json())
+  .then(data => {
+      if (data.success) {
+          localStorage.setItem("authenticated", "true");
+          localStorage.setItem("currentUser", username);
+          window.location.href = "grading.html";
       } else {
-        alert("Invalid username or password. Please try again.");
+          alert("Invalid username or password.");
       }
-    })
-    .catch(error => console.error("Error loading users:", error));
+  })
+  .catch(error => console.error("Error:", error));
 }
 
 // Ensures the user must be authenticated if on grading.html
