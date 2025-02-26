@@ -1,4 +1,5 @@
 // version.js
+
 const appVersion = "Version 1.0";
 
 // Dynamically sets the version text on elements with .app-version

@@ -1,0 +1,23 @@
+{
+  "name": "gradingapp",
+  "version": "1.0.0",
+  "description": "<h1>Student Grading App (Draft 1)</h1>\r <p>\r   This is a simple <strong>web application</strong> for teachers to log in, grade assignments based on multiple criteria, download\r   those grades as a text file, and keep a simple history of saved assignments in <em>localStorage</em>.\r </p>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pg25tommy/gradingApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pg25tommy/gradingApp/issues"
+  },
+  "homepage": "https://github.com/pg25tommy/gradingApp#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
