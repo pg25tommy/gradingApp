@@ -163,7 +163,7 @@ function saveToFile() {
             ? 'Proficient'
             : averageScore >= 2
                 ? 'Developing'
-                : 'Emerging';
+                : 'Emerging'; 
 
     data += `\nOverall Average: ${averageScore}\nRanking: ${ranking}\n\nTeacher Notes:\n${teacherNotes}\n`;
 
