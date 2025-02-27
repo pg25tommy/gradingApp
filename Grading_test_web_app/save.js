@@ -3,18 +3,23 @@
 // Saves grading data to a .txt file, updates local history, refreshes UI
 function saveToFile() {
   let studentName = document.getElementById("studentName").value.trim().replace(/\s+/g, '_');
+  
+  // Reordered: Grade is fetched before Term
+  let grade = document.getElementById("grade").value.trim();
   let term = document.getElementById("term").value.trim().replace(/\s+/g, '_');
+  let block = document.getElementById("block").value.trim();
+  
   let assignments = document.getElementsByClassName("assignment");
   let teacherNotes = document.getElementById("teacherNotes").value;
   let currentUser = localStorage.getItem("currentUser");
 
-  if (!studentName || !term) {
-    alert("Please enter the student's name and term.");
+  if (!studentName || !term || !grade || !block) {
+    alert("Please enter the student's name, grade, term, and block.");
     return;
   }
 
-  // Build the file content, including average calculations
-  let data = `Student Name: ${studentName}\nTerm: ${term}\n\nAssignments:\n`;
+  // Build the file content, with Grade now appearing before Term
+  let data = `Student Name: ${studentName}\nGrade: ${grade}\nTerm: ${term}\nBlock: ${block}\n\nAssignments:\n`;
   let totalScore = 0;
   let totalCriteria = 0;
 
@@ -63,7 +68,9 @@ function saveToFile() {
 
   history.push({
     studentName,
+    grade,
     term,
+    block,
     firstAssignmentName,
     date: new Date().toLocaleString()
   });
