@@ -3,11 +3,10 @@ require("dotenv").config({ path: require("path").join(__dirname, "..", ".env") }
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
-const https = require("https"); // added for HTTPS
 const { GoogleSpreadsheet } = require("google-spreadsheet");
 
 const app = express();
-const PORT = process.env.PORT || 443; // Use 443 for HTTPS by default
+const PORT = process.env.PORT || 80;
 const sessionLogPath = path.join(__dirname, "..", "Grading_test_web_app", "user_sessions.json");
 
 // Middleware to parse JSON request bodies
@@ -175,15 +174,9 @@ app.get("/users.json", (req, res) => {
 // Set your public IP for console logging
 const PUBLIC_IP = "70.71.240.63";
 
-// HTTPS options: Ensure you have your certificate and key files at these paths.
-const sslOptions = {
-    key: fs.readFileSync(path.join(__dirname, "..", "ssl", "private.key")),   // Update the path
-    cert: fs.readFileSync(path.join(__dirname, "..", "ssl", "certificate.crt")) // Update the path
-};
-
-// Start the HTTPS server with external access enabled
-https.createServer(sslOptions, app).listen(PORT, "0.0.0.0", () => {
-    console.log(`✅ HTTPS Server running at: https://0.0.0.0:${PORT}`);
-    console.log(`🔹 Accessible Locally: https://10.0.0.228:${PORT}`);
-    console.log(`🌍 Accessible via Public IP (if configured): https://${PUBLIC_IP}:${PORT}`);
+// Start the HTTP server with external access enabled
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`✅ HTTP Server running at: http://0.0.0.0:${PORT}`);
+    console.log(`🔹 Accessible Locally: http://10.0.0.228:${PORT}`);
+    console.log(`🌍 Accessible via Public IP (if configured): http://${PUBLIC_IP}:${PORT}`);
 });

@@ -38,12 +38,48 @@
   {
     "username": "Admin-Tommy",
     "loginTime": "2025-02-27T20:25:54.635Z",
-    "logoutTime": null,
-    "duration": null
+    "logoutTime": "2025-02-27T22:02:45.600Z",
+    "duration": "5811s"
   },
   {
     "username": "OJD",
     "loginTime": "2025-02-27T20:28:23.290Z",
+    "logoutTime": null,
+    "duration": null
+  },
+  {
+    "username": "Admin-Tommy",
+    "loginTime": "2025-02-27T21:17:06.493Z",
+    "logoutTime": "2025-02-27T22:42:27.880Z",
+    "duration": "5121s"
+  },
+  {
+    "username": "BetaTester1",
+    "loginTime": "2025-02-27T21:28:50.903Z",
+    "logoutTime": null,
+    "duration": null
+  },
+  {
+    "username": "Admin-Tommy",
+    "loginTime": "2025-02-27T22:02:30.333Z",
+    "logoutTime": "2025-02-27T23:12:29.743Z",
+    "duration": "4199s"
+  },
+  {
+    "username": "Admin-Tommy",
+    "loginTime": "2025-02-27T22:42:24.240Z",
+    "logoutTime": "2025-02-27T23:19:38.326Z",
+    "duration": "2234s"
+  },
+  {
+    "username": "Admin-Tommy",
+    "loginTime": "2025-02-27T23:11:51.870Z",
+    "logoutTime": null,
+    "duration": null
+  },
+  {
+    "username": "Admin-Tommy",
+    "loginTime": "2025-02-27T23:19:36.245Z",
     "logoutTime": null,
     "duration": null
   }
