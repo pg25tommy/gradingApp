@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <title>Student Grading App</title>
   <link rel="stylesheet" href="styles.css">
+  
+  <!-- Scripts in correct order -->
+  <script src="version.js"></script>
+  <script src="auth.js"></script>
+  <script src="greeting.js"></script> <!-- New greeting script -->
+  <script src="history.js"></script>
+  <script src="assignments.js"></script>
+  <script src="save.js"></script>
 </head>
 <body>
   <div class="container">
@@ -28,16 +36,11 @@
     <button onclick="logout()">Logout</button>
   </div>
 
+  <!-- History Container with greeting -->
   <div id="history-container">
+    <div id="greeting"></div>
     <button onclick="clearHistory()">Clear History</button>
     <div id="history"></div>
   </div>
-
-  <!-- Scripts in correct order -->
-  <script src="version.js"></script>
-  <script src="auth.js"></script>
-  <script src="history.js"></script>
-  <script src="assignments.js"></script>
-  <script src="save.js"></script>
 </body>
 </html>
