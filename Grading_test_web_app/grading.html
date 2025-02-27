@@ -6,13 +6,13 @@
   <link rel="stylesheet" href="styles.css">
   
   <!-- Scripts in correct order -->
-  <script src="version.js"></script>
+  <script src="grading.js"></script>
+  <script src="save.js"></script>
   <script src="auth.js"></script>
   <script src="greeting.js"></script>
   <script src="history.js"></script>
   <script src="assignments.js"></script>
-  <script src="save.js"></script>
-  <script src="grading.js"></script>
+  <script src="version.js"></script>
 </head>
 <body>
   <div class="container">
@@ -32,25 +32,28 @@
     <label>Block:</label>
     <input type="text" id="block" required>
 
-    <div id="assignments">
+    <!-- Assignment container with added scrollability if needed -->
+    <div id="assignments" class="assignments-container">
       <h3>Assignments</h3>
     </div>
-    <button onclick="addAssignment()">Add Assignment</button>
+    <button type="button" onclick="addAssignment()">Add Assignment</button>
 
     <h3>Teacher Notes</h3>
     <textarea id="teacherNotes" rows="4" placeholder="Enter notes here..."></textarea>
 
-    <button onclick="saveToFile()">Save & Download</button>
-    <button onclick="logout()">Logout</button>
+    <!-- Two separate buttons: one to save (which clears the form) and one to download -->
+    <button type="button" onclick="saveFormData()">Save</button>
+    <button type="button" onclick="downloadFile()">Download</button>
+    <button type="button" onclick="logout()">Logout</button>
   </div>
 
   <div id="history-container">
     <div id="greeting"></div>
-    <button onclick="clearHistory()">Clear History</button>
+    <button type="button" onclick="clearHistory()">Clear History</button>
     <div id="history"></div>
   </div>
 
-  <!-- Email icon with text in bottom left corner -->
+  <!-- Email Icon/Button in bottom left corner for the grading page -->
   <a href="mailto:tommy@knocktwice.ca?subject=Request%20Features" id="emailIcon" title="Request Features / Email Developer">
     ✉️ Request Features / Email Developer
   </a>
