@@ -4,24 +4,43 @@
   <meta charset="UTF-8">
   <title>Login - Student Grading App</title>
   <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- Container for login -->
-  <div class="container">
-    <h2>Login</h2>
-    <p class="app-version"></p>
-    
-    <label>Username:</label>
-    <input type="text" id="username" placeholder="Enter your username" required>
-    
-    <label>Password:</label>
-    <input type="password" id="password" placeholder="Enter your password" required>
-    
-    <button onclick="login()">Login</button>
-  </div>
-
+  
   <!-- Scripts in correct order -->
   <script src="version.js"></script>
   <script src="auth.js"></script>
+</head>
+<body>
+  <div class="login-wrapper">
+    <!-- About Box describing the app -->
+    <div class="about-box">
+      <h3>About This App</h3>
+      <p>
+        I've known several teachers who take their work home, spending countless hours grading assignments with little to no streamlined systems in place to help. Watching them struggle with inefficient processes made me realize how much time and energy they lose—time that could be better spent on their students or their own well-being.
+
+        That’s when I started thinking about building this app. I wanted to create something that simplifies grading, making it faster and more organized while still aligning with the BC Canada grading scale. The goal is to provide an intuitive tool where teachers can easily input student names, track assignments across terms, and apply grading criteria efficiently, all while storing their data in a simple, accessible format.
+        
+        By automating and centralizing these tasks, I hope to reduce the burden on educators and give them back some of their valuable time. Feel free to reach out for beta access or thoughs on features. More to come
+      </p>
+    </div>
+
+    <!-- Login Container -->
+    <div class="container">
+      <h2>Login</h2>
+      <p class="app-version"></p>
+      
+      <label>Username:</label>
+      <input type="text" id="username" placeholder="Enter your username" required>
+      
+      <label>Password:</label>
+      <input type="password" id="password" placeholder="Enter your password" required>
+      
+      <button onclick="login()">Login</button>
+    </div>
+  </div>
+
+  <!-- Email Icon/Button in bottom left corner -->
+  <a href="mailto:tommy@knocktwice.ca?subject=Request%20Beta%20Access" id="loginEmailIcon" title="Request Beta access from the developer">
+    ✉️ Request Beta access from the developer
+  </a>
 </body>
 </html>

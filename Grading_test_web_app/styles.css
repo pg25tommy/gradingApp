@@ -20,19 +20,23 @@ body {
     align-items: center;
     height: 100vh;
     padding: 20px;
+    box-sizing: border-box;
 }
 
+/* Container for grading screen or login */
 .container {
     background: var(--primary-color);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     max-width: 450px;
-    width: 90%;
+    width: 100%;
     text-align: center;
     box-sizing: border-box;
+    margin: 0;
 }
 
+/* Headings and labels */
 h2, h3 {
     color: var(--text-color);
     margin-bottom: 10px;
@@ -45,7 +49,7 @@ label {
     color: var(--text-color);
 }
 
-/* Styling for input fields, selects, and textareas */
+/* Inputs, textareas, selects */
 input, textarea, select {
     width: 100%;
     padding: 10px;
@@ -54,23 +58,21 @@ input, textarea, select {
     font-size: 16px;
     box-sizing: border-box;
     background: var(--secondary-color);
-    color: black; /* High contrast text */
-    border: 2px solid var(--border-color); /* Black border for all fields */
+    color: black;
+    border: 2px solid var(--border-color);
 }
 
-/* High contrast placeholder text */
 textarea::placeholder {
-    color: black; /* Ensures maximum visibility */
+    color: black;
     font-weight: bold;
-    opacity: 1; /* Fully visible */
+    opacity: 1;
 }
 
-/* Textarea specific styling */
 textarea {
     resize: none;
 }
 
-/* Button Styling */
+/* Buttons */
 button {
     width: 100%;
     padding: 10px;
@@ -89,7 +91,7 @@ button:hover {
     background-color: var(--button-hover-color);
 }
 
-/* Assignment container */
+/* Assignment box styling */
 .assignment {
     background: var(--accent-color);
     padding: 10px;
@@ -100,7 +102,7 @@ button:hover {
     color: white;
 }
 
-/* Remove button inside assignments */
+/* Remove assignment button styling */
 .remove-assignment {
     background: #16321D;
     color: white;
@@ -112,7 +114,7 @@ button:hover {
     background: #0F2716;
 }
 
-/* History Box */
+/* History container styling */
 #history-container {
     position: absolute;
     top: 10px;
@@ -131,7 +133,7 @@ button:hover {
     color: black;
 }
 
-/* Email icon styling */
+/* Email icon styling for grading page */
 #emailIcon {
     position: fixed;
     bottom: 10px;
@@ -144,9 +146,63 @@ button:hover {
     border-radius: 4px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     transition: background 0.3s ease;
-  }
-  
-  #emailIcon:hover {
+}
+
+#emailIcon:hover {
     background: var(--button-hover-color);
-  }
-  
+}
+
+/* Email icon styling for login page */
+#loginEmailIcon {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--text-color);
+    background: var(--primary-color);
+    padding: 8px 12px;
+    border-radius: 4px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease;
+}
+
+#loginEmailIcon:hover {
+    background: var(--button-hover-color);
+}
+
+/* About box styling for login page */
+.about-box {
+    background: var(--primary-color);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 800px; /* Increased max-width for better readability */
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.about-box h3 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.about-box p {
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.6; /* Increased line spacing */
+}
+
+/* Login wrapper for centering the About box and Login container */
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}

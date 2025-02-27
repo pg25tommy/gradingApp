@@ -1,14 +1,11 @@
 // save.js
 
-// Saves grading data to a .txt file, updates local history, refreshes UI
+// Saves grading data to a .txt file, updates local history, and refreshes the UI.
 function saveToFile() {
   let studentName = document.getElementById("studentName").value.trim().replace(/\s+/g, '_');
-  
-  // Reordered: Grade is fetched before Term
   let grade = document.getElementById("grade").value.trim();
   let term = document.getElementById("term").value.trim().replace(/\s+/g, '_');
   let block = document.getElementById("block").value.trim();
-  
   let assignments = document.getElementsByClassName("assignment");
   let teacherNotes = document.getElementById("teacherNotes").value;
   let currentUser = localStorage.getItem("currentUser");
@@ -18,39 +15,25 @@ function saveToFile() {
     return;
   }
 
-  // Build the file content, with Grade now appearing before Term
+  // Build the file content header.
   let data = `Student Name: ${studentName}\nGrade: ${grade}\nTerm: ${term}\nBlock: ${block}\n\nAssignments:\n`;
-  let totalScore = 0;
-  let totalCriteria = 0;
-
+  
+  // List each assignment name only.
   for (let assign of assignments) {
     let name = assign.querySelector(".assignmentName").value;
-    let scores = assign.querySelectorAll(".gradingCriteria");
-    let sum = 0;
-
-    scores.forEach(score => {
-      sum += parseInt(score.value);
-      totalScore += parseInt(score.value);
-      totalCriteria++;
-    });
-
-    // Summarize each assignment’s average
-    data += `- ${name}: Average Score: ${(sum / scores.length).toFixed(2)}\n`;
+    data += `- ${name}\n`;
   }
+  
+  // Calculate overall grade using the function from grading.js.
+  let overall = calculateOverallGrade(assignments);
+  
+  // Append overall results (only percentage, ranking, and letter grade)
+  data += `\nOverall Percentage: ${overall.percentage}%`;
+  data += `\nRanking: ${overall.ranking}`;
+  data += `\nLetter Grade: ${overall.letterGrade}`;
+  data += `\n\nTeacher Notes:\n${teacherNotes}\n`;
 
-  // Overall average & ranking
-  let averageScore = (totalCriteria > 0)
-    ? (totalScore / totalCriteria).toFixed(2)
-    : 0;
-
-  let ranking = 'Emerging';
-  if (averageScore >= 3.5) ranking = 'Extending';
-  else if (averageScore >= 3) ranking = 'Proficient';
-  else if (averageScore >= 2) ranking = 'Developing';
-
-  data += `\nOverall Average: ${averageScore}\nRanking: ${ranking}\n\nTeacher Notes:\n${teacherNotes}\n`;
-
-  // Trigger file download
+  // Trigger file download.
   let fileName = `${studentName}_${term}_Assignment.txt`;
   let blob = new Blob([data], { type: "text/plain" });
   let link = document.createElement("a");
@@ -60,7 +43,7 @@ function saveToFile() {
   link.click();
   document.body.removeChild(link);
 
-  // Update local history
+  // Update local history.
   let history = JSON.parse(localStorage.getItem(`history_${currentUser}`)) || [];
   let firstAssignmentName = assignments.length > 0
     ? assignments[0].querySelector(".assignmentName").value
@@ -77,6 +60,6 @@ function saveToFile() {
 
   localStorage.setItem(`history_${currentUser}`, JSON.stringify(history));
 
-  // Refresh the history container
+  // Refresh the history container.
   displayHistory();
 }
