@@ -11,7 +11,6 @@ const app = express();
 const PORT = process.env.PORT || 80;
 const sessionLogPath = path.join(__dirname, "..", "Grading_test_web_app", "user_sessions.json");
 
-
 // Middleware to parse JSON request bodies
 app.use(express.json());
 
@@ -22,8 +21,6 @@ if (!process.env.SHEET_ID || !process.env.GOOGLE_APPLICATION_CREDENTIALS) {
     console.log("⚠️  WARNING: Missing Google Sheets configuration in .env file!");
 }
 
-
-// Load users from .env
 // Load users from .env
 const users = {
   [process.env.ADMIN1_USERNAME]: process.env.ADMIN1_PASSWORD,
@@ -33,9 +30,6 @@ const users = {
   [process.env.BETA2_USERNAME]: process.env.BETA2_PASSWORD,
   [process.env.BETA3_USERNAME]: process.env.BETA3_PASSWORD
 };
-
-
-
 
 // Initialize Google Sheets API
 async function initGoogleSheets() {

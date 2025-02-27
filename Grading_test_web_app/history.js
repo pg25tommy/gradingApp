@@ -29,5 +29,5 @@ function clearHistory() {
   displayHistory();
 }
 
-// On DOM load, display the user's history if on grading.html
+// On DOM load, display the user's history (greeting is handled separately)
 document.addEventListener("DOMContentLoaded", displayHistory);
