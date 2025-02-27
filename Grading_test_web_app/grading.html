@@ -32,7 +32,7 @@
     <label>Block:</label>
     <input type="text" id="block" required>
 
-    <!-- Assignment container with added scrollability if needed -->
+    <!-- Assignment container with added scrollability -->
     <div id="assignments" class="assignments-container">
       <h3>Assignments</h3>
     </div>
@@ -41,7 +41,14 @@
     <h3>Teacher Notes</h3>
     <textarea id="teacherNotes" rows="4" placeholder="Enter notes here..."></textarea>
 
-    <!-- Two separate buttons: one to save (which clears the form) and one to download -->
+    <!-- New Formative Assessment Section (visually separated) -->
+    <div class="formative-section">
+      <h3>Formative Assessments</h3>
+      <div id="formativeContainer"></div>
+      <button type="button" onclick="addFormativeAssessment()">Add Formative Assessment</button>
+    </div>
+
+    <!-- Two separate buttons: Save and Download (currently same functionality) -->
     <button type="button" onclick="saveFormData()">Save</button>
     <button type="button" onclick="downloadFile()">Download</button>
     <button type="button" onclick="logout()">Logout</button>
@@ -53,9 +60,9 @@
     <div id="history"></div>
   </div>
 
-  <!-- Email Icon/Button in bottom left corner for the grading page -->
-  <a href="mailto:tommy@knocktwice.ca?subject=Request%20Features" id="emailIcon" title="Request Features / Email Developer">
-    ✉️ Request Features / Email Developer
+  <!-- Email Icon/Button in bottom left corner -->
+  <a href="mailto:tommy@knocktwice.ca?subject=Request%20Beta%20Access" id="loginEmailIcon" title="Request Beta access from the developer">
+    ✉️ Request Beta access from the developer
   </a>
 </body>
 </html>

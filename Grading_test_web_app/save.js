@@ -8,27 +8,40 @@ function generateFileContent() {
   let block = document.getElementById("block").value.trim();
   let assignments = document.getElementsByClassName("assignment");
   let teacherNotes = document.getElementById("teacherNotes").value;
-
+  
   let data = `Student Name: ${studentName}\nGrade: ${grade}\nTerm: ${term}\nBlock: ${block}\n\nAssignments:\n`;
   
-  // List each assignment name only.
+  // List each assignment name.
   for (let assign of assignments) {
     let name = assign.querySelector(".assignmentName").value;
     data += `- ${name}\n`;
+  }
+  
+  // Append Teacher Notes.
+  data += `\nTeacher Notes:\n${teacherNotes}\n`;
+  
+  // Append Formative Assessments.
+  let formativeTextareas = document.getElementsByClassName("formativeAssessment");
+  if (formativeTextareas.length > 0) {
+    data += `\nFormative Assessments:\n`;
+    for (let ta of formativeTextareas) {
+      let text = ta.value;
+      if(text.trim() !== "") {
+        data += `- ${text}\n`;
+      }
+    }
   }
   
   // Calculate overall grade using the function from grading.js.
   let overall = calculateOverallGrade(assignments);
   data += `\nOverall Percentage: ${overall.percentage}%`;
   data += `\nRanking: ${overall.ranking}`;
-  data += `\nLetter Grade: ${overall.letterGrade}`;
-  data += `\n\nTeacher Notes:\n${teacherNotes}\n`;
+  data += `\nLetter Grade: ${overall.letterGrade}\n`;
   
   return { data, studentName };
 }
 
-// Common function that performs the save (local history update),
-// triggers file download, and clears the form.
+// Combined common function used by both Save and Download.
 function commonSaveAndDownload() {
   let studentName = document.getElementById("studentName").value.trim().replace(/\s+/g, '_');
   let grade = document.getElementById("grade").value.trim();
@@ -77,18 +90,18 @@ function commonSaveAndDownload() {
   document.getElementById("term").value = "";
   document.getElementById("block").value = "";
   document.getElementById("teacherNotes").value = "";
-  // Clear assignment blocks by resetting the inner HTML (keeping the header)
+  // Clear assignment blocks (keeping the header).
   document.getElementById("assignments").innerHTML = "<h3>Assignments</h3>";
+  // Clear formative assessments.
+  document.getElementById("formativeContainer").innerHTML = "";
 }
 
 // Separate function for "Save" button.
-// For now, it calls the common function.
 function saveFormData() {
   commonSaveAndDownload();
 }
 
 // Separate function for "Download" button.
-// For now, it calls the same common function.
 function downloadFile() {
   commonSaveAndDownload();
 }
