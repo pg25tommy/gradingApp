@@ -8,7 +8,7 @@ function generateFileContent() {
   let block = document.getElementById("block").value.trim();
   let assignments = document.getElementsByClassName("assignment");
   let teacherNotes = document.getElementById("teacherNotes").value;
-  
+
   let data = `Student Name: ${studentName}\nGrade: ${grade}\nTerm: ${term}\nBlock: ${block}\n\nAssignments:\n`;
   
   // List each assignment name.
@@ -20,13 +20,13 @@ function generateFileContent() {
   // Append Teacher Notes.
   data += `\nTeacher Notes:\n${teacherNotes}\n`;
   
-  // Append Formative Assessments.
+  // Append Formative Assessments if any.
   let formativeTextareas = document.getElementsByClassName("formativeAssessment");
   if (formativeTextareas.length > 0) {
     data += `\nFormative Assessments:\n`;
     for (let ta of formativeTextareas) {
       let text = ta.value;
-      if(text.trim() !== "") {
+      if (text.trim() !== "") {
         data += `- ${text}\n`;
       }
     }
@@ -41,7 +41,7 @@ function generateFileContent() {
   return { data, studentName };
 }
 
-// Combined common function used by both Save and Download.
+// Common function that updates local history, generates a PDF using jsPDF, downloads it, and clears the form.
 function commonSaveAndDownload() {
   let studentName = document.getElementById("studentName").value.trim().replace(/\s+/g, '_');
   let grade = document.getElementById("grade").value.trim();
@@ -73,16 +73,29 @@ function commonSaveAndDownload() {
   localStorage.setItem(`history_${currentUser}`, JSON.stringify(history));
   displayHistory();
   
-  // Generate file content and trigger download.
+  // Generate file content.
   let { data, studentName: fileStudentName } = generateFileContent();
-  let fileName = `${fileStudentName}_${firstAssignmentName}_Assignment.txt`;
-  let blob = new Blob([data], { type: "text/plain" });
-  let link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = fileName;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  
+  // Create a PDF using jsPDF.
+  const { jsPDF } = window.jspdf; // Ensure jsPDF is loaded in your HTML.
+  const doc = new jsPDF({
+    orientation: 'portrait',
+    unit: 'pt',
+    format: 'a4'
+  });
+  
+  // Add a title.
+  doc.setFontSize(18);
+  doc.text(`Grading Report for ${fileStudentName}`, 40, 40);
+  
+  // Split text to fit within the page width.
+  doc.setFontSize(12);
+  const lines = doc.splitTextToSize(data, 500);
+  doc.text(lines, 40, 70);
+  
+  // Generate file name as StudentName_AssignmentName_Assignment.pdf.
+  let fileName = `${fileStudentName}_${firstAssignmentName}_Assignment.pdf`;
+  doc.save(fileName);
   
   // Clear the form fields.
   document.getElementById("studentName").value = "";
@@ -105,3 +118,4 @@ function saveFormData() {
 function downloadFile() {
   commonSaveAndDownload();
 }
+
