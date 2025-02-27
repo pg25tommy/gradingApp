@@ -212,4 +212,14 @@ button:hover {
     max-height: 300px;  /* adjust as needed */
     overflow-y: auto;
   }
+
+  /* Formative Assessment Section styling */
+.formative-section {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px dashed var(--secondary-color);
+    border-radius: 8px;
+    background-color: rgba(90, 140, 102, 0.1); /* Light tinted background */
+  }
+  
   

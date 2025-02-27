@@ -51,3 +51,13 @@ function addAssignment() {
     div.remove();
   });
 }
+
+// Dynamically adds a formative assessment textbox in the formativeContainer.
+function addFormativeAssessment() {
+  const container = document.getElementById("formativeContainer");
+  const textarea = document.createElement("textarea");
+  textarea.classList.add("formativeAssessment");
+  textarea.rows = 3;
+  textarea.placeholder = "Enter formative assessment details...";
+  container.appendChild(textarea);
+}
