@@ -130,3 +130,23 @@ button:hover {
     margin: 5px 0;
     color: black;
 }
+
+/* Email icon styling */
+#emailIcon {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--text-color);
+    background: var(--primary-color);
+    padding: 8px 12px;
+    border-radius: 4px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease;
+  }
+  
+  #emailIcon:hover {
+    background: var(--button-hover-color);
+  }
+  
