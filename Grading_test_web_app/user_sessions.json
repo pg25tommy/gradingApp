@@ -8,12 +8,30 @@
   {
     "username": "Admin-Tommy",
     "loginTime": "2025-02-27T18:39:02.647Z",
-    "logoutTime": null,
-    "duration": null
+    "logoutTime": "2025-02-27T19:15:32.977Z",
+    "duration": "2190s"
   },
   {
     "username": "OJD",
     "loginTime": "2025-02-27T19:11:16.472Z",
+    "logoutTime": "2025-02-27T19:13:14.089Z",
+    "duration": "118s"
+  },
+  {
+    "username": "Admin-Tommy",
+    "loginTime": "2025-02-27T19:28:35.029Z",
+    "logoutTime": null,
+    "duration": null
+  },
+  {
+    "username": "BetaTester1",
+    "loginTime": "2025-02-27T19:31:52.561Z",
+    "logoutTime": null,
+    "duration": null
+  },
+  {
+    "username": "BetaTester2",
+    "loginTime": "2025-02-27T19:33:14.654Z",
     "logoutTime": null,
     "duration": null
   }
