@@ -23,15 +23,11 @@ function calculateOverallGrade(assignments) {
       };
     }
     
-    // Calculate average score on the 1–4 scale and convert to a percentage
-    let averageScore = totalScore / totalCriteria; // (1–4 scale)
-    let percentage = (averageScore / 4) * 100;       // convert to 0–100%
+    // Calculate average on a 1–4 scale and convert to a percentage (0–100%)
+    let averageScore = totalScore / totalCriteria;
+    let percentage = (averageScore / 4) * 100;
     
-    // Determine ranking and letter grade using the defined scale:
-    // 0–59%   => Emerging (F)
-    // 60–72%  => Developing (C)
-    // 73–88%  => Proficient (B)
-    // 89–100% => Extending (A)
+    // Determine ranking and letter grade based on percentage
     let ranking = "";
     let letterGrade = "";
     

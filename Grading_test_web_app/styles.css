@@ -206,3 +206,10 @@ button:hover {
     padding: 20px;
     box-sizing: border-box;
 }
+
+/* Make the assignments container scrollable if it grows too tall */
+.assignments-container {
+    max-height: 300px;  /* adjust as needed */
+    overflow-y: auto;
+  }
+  
