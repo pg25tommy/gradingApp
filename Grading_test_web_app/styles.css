@@ -133,10 +133,11 @@ button:hover {
     color: black;
 }
 
-/* Fixed Buttons Container for bottom left (vertical stack) */
+/* ✅ Fixed Buttons Container (Bottom Left) */
+/* ✅ Fix: Move buttons higher to prevent overlap with footer */
 #fixedButtons {
     position: fixed;
-    bottom: 60px;  /* Moved up to avoid overlapping the footer */
+    bottom: 60px;  /* 🔹 Increased from 20px to 80px */
     left: 20px;
     z-index: 1100;
     display: flex;
@@ -144,9 +145,10 @@ button:hover {
     gap: 10px;
 }
 
-/* Both fixed buttons use the same styling */
-#loginEmailIcon,
-#tosButton {
+
+/* Style for email and ToS buttons */
+#fixedButtons a,
+#fixedButtons button {
     font-size: 14px;
     text-decoration: none;
     color: var(--text-color);
@@ -155,15 +157,16 @@ button:hover {
     border-radius: 4px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     transition: background 0.3s ease;
-    width: max-content;
+    width: fit-content;
 }
 
-#loginEmailIcon:hover,
-#tosButton:hover {
+/* Hover effect */
+#fixedButtons a:hover,
+#fixedButtons button:hover {
     background-color: var(--button-hover-color);
 }
 
-/* Footer Styling */
+/* ✅ Ensure Footer is Consistent Across Pages */
 footer {
     position: fixed;
     bottom: 0;
@@ -177,6 +180,7 @@ footer {
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
     z-index: 900;
 }
+
 
 /* Login wrapper for centering content */
 .login-wrapper {
@@ -269,3 +273,4 @@ footer {
     color: #000;
     text-decoration: none;
 }
+

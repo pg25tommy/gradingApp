@@ -44,8 +44,8 @@
   {
     "username": "OJD",
     "loginTime": "2025-02-27T20:28:23.290Z",
-    "logoutTime": null,
-    "duration": null
+    "logoutTime": "2025-02-28T04:00:19.895Z",
+    "duration": "27117s"
   },
   {
     "username": "Admin-Tommy",
@@ -74,12 +74,90 @@
   {
     "username": "Admin-Tommy",
     "loginTime": "2025-02-27T23:11:51.870Z",
+    "logoutTime": "2025-02-28T00:07:42.484Z",
+    "duration": "3351s"
+  },
+  {
+    "username": "Admin-Tommy",
+    "loginTime": "2025-02-27T23:19:36.245Z",
+    "logoutTime": "2025-02-28T00:09:01.380Z",
+    "duration": "2965s"
+  },
+  {
+    "username": "Admin-Tommy",
+    "loginTime": "2025-02-28T00:00:10.513Z",
+    "logoutTime": "2025-02-28T00:12:01.066Z",
+    "duration": "711s"
+  },
+  {
+    "username": "Admin-Tommy",
+    "loginTime": "2025-02-28T00:00:58.301Z",
+    "logoutTime": "2025-02-28T00:21:02.601Z",
+    "duration": "1204s"
+  },
+  {
+    "username": "Admin-Tommy",
+    "loginTime": "2025-02-28T00:03:23.706Z",
+    "logoutTime": "2025-02-28T00:21:11.733Z",
+    "duration": "1068s"
+  },
+  {
+    "username": "Admin-Tommy",
+    "loginTime": "2025-02-28T00:08:56.131Z",
+    "logoutTime": "2025-02-28T04:06:30.074Z",
+    "duration": "14254s"
+  },
+  {
+    "username": "Admin-Tommy",
+    "loginTime": "2025-02-28T00:10:42.515Z",
     "logoutTime": null,
     "duration": null
   },
   {
     "username": "Admin-Tommy",
-    "loginTime": "2025-02-27T23:19:36.245Z",
+    "loginTime": "2025-02-28T00:12:11.511Z",
+    "logoutTime": null,
+    "duration": null
+  },
+  {
+    "username": "Admin-Tommy",
+    "loginTime": "2025-02-28T00:12:51.489Z",
+    "logoutTime": null,
+    "duration": null
+  },
+  {
+    "username": "OJD",
+    "loginTime": "2025-02-28T03:58:37.873Z",
+    "logoutTime": null,
+    "duration": null
+  },
+  {
+    "username": "Admin-Tommy",
+    "loginTime": "2025-02-28T04:00:56.823Z",
+    "logoutTime": null,
+    "duration": null
+  },
+  {
+    "username": "Admin-Tommy",
+    "loginTime": "2025-02-28T04:13:08.961Z",
+    "logoutTime": null,
+    "duration": null
+  },
+  {
+    "username": "Admin-Tommy",
+    "loginTime": "2025-02-28T04:26:59.626Z",
+    "logoutTime": null,
+    "duration": null
+  },
+  {
+    "username": "OJD",
+    "loginTime": "2025-02-28T04:27:24.768Z",
+    "logoutTime": null,
+    "duration": null
+  },
+  {
+    "username": "Admin-Tommy",
+    "loginTime": "2025-02-28T05:08:51.159Z",
     "logoutTime": null,
     "duration": null
   }

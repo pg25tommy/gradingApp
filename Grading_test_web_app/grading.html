@@ -1,69 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Student Grading App</title>
-  <link rel="stylesheet" href="styles.css">
-  
-  <!-- Scripts in correct order -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="grading.js"></script>
-  <script src="save.js"></script>
-  <script src="auth.js"></script>
-  <script src="greeting.js"></script>
-  <script src="history.js"></script>
-  <script src="assignments.js"></script>
-  <script src="version.js"></script>
+    <meta charset="UTF-8">
+    <title>Student Grading App</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Scripts -->
+     <!-- ✅ Ensure jsPDF is loaded -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="grading.js"></script>
+    <script src="save.js"></script>
+    <script src="auth.js"></script>
+    <script src="greeting.js"></script>
+    <script src="history.js"></script>
+    <script src="assignments.js"></script>
+    <script src="version.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h2>Student Grading Application</h2>
-    <p class="app-version"></p>
-    
-    <label>Student Name:</label>
-    <input type="text" id="studentName" required>
-    
-    <!-- Reordered: Grade comes before Term -->
-    <label>Grade:</label>
-    <input type="text" id="grade" required>
-    
-    <label>Term:</label>
-    <input type="text" id="term" required>
+    <div class="container">
+        <h2>Student Grading Application</h2>
+        <p class="app-version"></p>
+        
+        <label>Student Name:</label>
+        <input type="text" id="studentName" required>
+        
+        <label>Grade:</label>
+        <input type="text" id="grade" required>
+        
+        <label>Term:</label>
+        <input type="text" id="term" required>
 
-    <label>Block:</label>
-    <input type="text" id="block" required>
+        <label>Block:</label>
+        <input type="text" id="block" required>
 
-    <!-- Assignment container with added scrollability -->
-    <div id="assignments" class="assignments-container">
-      <h3>Assignments</h3>
+        <div id="assignments">
+            <h3>Assignments</h3>
+        </div>
+        <button type="button" onclick="addAssignment()">Add Assignment</button>
+
+        <!-- ✅ Formative Assessment Section (Fixed) -->
+        <div class="formative-section">
+            <h3>Formative Assessments</h3>
+            <div id="formativeContainer"></div>
+            <button type="button" id="addFormativeAssessment" onclick="addFormativeAssessment()">
+                ➕ Add Formative Assessment
+            </button>
+        </div>
+
+        <h3>Teacher Notes</h3>
+        <textarea id="teacherNotes" rows="4"></textarea>
+
+        <button type="button" onclick="saveFormData()">Save</button>
+        <button type="button" onclick="downloadFile()">Download</button>
+        <button type="button" onclick="logout()">Logout</button>
     </div>
-    <button type="button" onclick="addAssignment()">Add Assignment</button>
 
-    <h3>Teacher Notes</h3>
-    <textarea id="teacherNotes" rows="4" placeholder="Enter notes here..."></textarea>
-
-    <!-- New Formative Assessment Section (visually separated) -->
-    <div class="formative-section">
-      <h3>Formative Assessments</h3>
-      <div id="formativeContainer"></div>
-      <button type="button" onclick="addFormativeAssessment()">Add Formative Assessment</button>
+    <div id="history-container">
+        <div id="greeting"></div>
+        <button type="button" onclick="clearHistory()">Clear History</button>
+        <div id="history"></div>
     </div>
 
-    <!-- Two separate buttons: Save and Download (currently same functionality) -->
-    <button type="button" onclick="saveFormData()">Save</button>
-    <button type="button" onclick="downloadFile()">Download</button>
-    <button type="button" onclick="logout()">Logout</button>
-  </div>
+    <!-- Fixed Buttons for Email Contact and ToS -->
+    <div id="fixedButtons">
+        <a href="mailto:tommy@knocktwice.ca?subject=GradeBook%20Support"
+           id="gradingEmailButton"
+           title="Contact the developer for support">
+           ✉️ Contact Developer
+        </a>
+    </div>
 
-  <div id="history-container">
-    <div id="greeting"></div>
-    <button type="button" onclick="clearHistory()">Clear History</button>
-    <div id="history"></div>
-  </div>
-
-  <!-- Email Icon/Button in bottom left corner -->
-  <a href="mailto:tommy@knocktwice.ca?subject=Request%20Beta%20Access" id="loginEmailIcon" title="Request Beta access from the developer">
-    ✉️ Request BFeatures / Speak with the developer
-  </a>
+    <!-- ✅ Footer -->
+    <footer>
+        <span>&copy; 2024 KnockTwice. All rights reserved.</span>
+    </footer>
 </body>
 </html>
